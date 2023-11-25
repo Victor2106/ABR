@@ -1,6 +1,5 @@
 open BtreeS;;
 
-(*exo1*)
 let max(a,b : int * int) : int = 
   if a <= b 
   then b 
@@ -13,6 +12,7 @@ let rec height(t : 'a t_tree) : int =
   else 1 + max(height(tree_subleft(t)), height(tree_subright(t)))
 ;;
 
+(*L'arbre est-il une feuille ?*)
 let t_isleaf(t : 'a t_tree) : bool =
   height(t) = 1
 ;;
@@ -23,6 +23,7 @@ let t_isinnode(t : 'a t_tree) : bool =
   else height(tree_subright(t)) > 0 || height(tree_subleft(t)) > 0
 ;;
 
+(*Calcul de la taille de l'arbre*)
 let rec size(t : 'a t_tree) : int =
   if tree_isempty(t)
   then 0
@@ -46,6 +47,7 @@ let rec bst_seek(t, v : 'a t_tree * 'a) : bool =
       else bst_seek(fg, v)
 ;;
 
+(*Insérer un élément dans l'arbre*)
 let rec bst_linsert(t, v : 'a t_tree * 'a) : 'a t_tree =
   if (tree_isempty(t))
   then tree_rooting(v, tree_empty(), tree_empty())
@@ -56,6 +58,7 @@ let rec bst_linsert(t, v : 'a t_tree * 'a) : 'a t_tree =
     else tree_rooting(n, fg, bst_linsert(fd, v))
 ;;
 
+(*Afficher l'arbre dans une chaine de caractères*)
 let rec btree_to_string(t : 'a t_tree) : string =
   if tree_isempty(t)
   then "empty"
@@ -73,11 +76,10 @@ let rec bst_lbuild_aux(l, t : 'a list * 'a t_tree) : 'a t_tree =
     bst_lbuild_aux(new_l, new_t)
 ;;
 
+(*Construire un arbre (en fait on utilise la fonction d'insérer un élément...)*)
 let bst_lbuild(l : 'a list) : 'a t_tree =
   bst_lbuild_aux(l, tree_empty())
 ;;
-
-bst_lbuild( [5;6;8;9;2]);;
 
 let rec find_min (t : 'a t_tree) : 'a * 'a t_tree =
   if (tree_isempty(t))
