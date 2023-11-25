@@ -10,7 +10,7 @@ Le projet est divisé en plusieurs modules :
 
 Ce module est responsable de la définition du type de l'arbre binaire de recherche.
 
-### `Bst.ml`
+### `bst.ml`
 
 Le module `Bst` contient diverses fonctions auxiliaires, telles que le calcul de la hauteur d'un arbre, la création d'un arbre, et d'autres opérations liées.
 
