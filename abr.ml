@@ -2,7 +2,7 @@ open BtreeS
 open Bst
 open Random
 
-(*Question 1*)
+(*Création d'un arbre d'une taille size contenant comme valeur maximale maxValue*)
 let rec bst_rnd_create_aux(t, size, maxValue : 'a t_tree * int * int) : 'a t_tree =
   if (size = 0)
   then t
@@ -15,7 +15,7 @@ let bst_rnd_create(size, maxValue : int * int) : 'a t_tree =
   bst_rnd_create_aux(tree_empty(), size, maxValue)
 ;;
 
-(*Question 2*)
+(*Calcul d'un déséquilibre d'un arbre*)
 let bst_imbalance(t : 'a t_tree) : int =
   height(tree_subleft(t)) - height(tree_subright(t))
 ;;
@@ -37,8 +37,6 @@ let bst_avg_imbalance(nb, size, maxValue : int * int * int) : float =
   (!imb /. float_of_int(nb))
 ;;
 
-(*Question 3*)
-
 (*Génération d'une liste croissante*)
 let rec generate_aux(list, size, limit, array : 'a list * int * int * bool array) : ('a list * bool array) =
   if size = 0
@@ -59,7 +57,7 @@ let generateList(size, limit, array : int * int * bool array) : ('a list * bool 
   generate_aux([], size, limit, array)
 ;;
 
-(*Génération d'une liste avec des sous suites*)
+(*Génération d'une liste avec des sous suites de taille croissante, décroissante, aléatoire ou fixe contenant des entiers croissants*)
 let generateListWithSubList(nbSousSuite, ordre : int * string) : 'a list =
   let maxSizeSuite : int ref = ref 10 in
 
