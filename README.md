@@ -20,8 +20,9 @@ Le fichier `abr.ml` permet de générer un arbre à partir d'une liste et d'effe
 Voici un extrait illustrant la création d'une liste avec des sous-suites composées de chiffres croissants de taille variable :
 
 ```ocaml
-(* aleatoire : [5 ; 7 ; 9] [71 ; 80] [2 ; 50 ; 60 ; 97] *)
-(* Ceci formera : [5 ; 7 ; 9 ; 71 ; 80 ; 2 ; 50 ; 60 ; 97] *)
+(* Sous-suites aléatoire *)
+aleatoire : [5 ; 7 ; 9] [71 ; 80] [2 ; 50 ; 60 ; 97]
+Ceci formera : [5 ; 7 ; 9 ; 71 ; 80 ; 2 ; 50 ; 60 ; 97]
 
 (* Sous-suites croissantes *)
 croissant : [5 ; 7 ; 9] [71 ; 80 ; 87 ; 99] [2 ; 50 ; 60 ; 97 ; 125]
