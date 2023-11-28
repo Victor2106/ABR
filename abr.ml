@@ -6,7 +6,7 @@ let rangeRandom(min, max : int * int) : int =
   min + Random.int(max - min + 1)
 ;;
 
-(*Question 1*)
+(*Création d'un arbre*)
 let rec bst_rnd_create_aux(t, size, maxValue, array : 'a t_tree * int * int * bool array) : 'a t_tree =
   if size = 0
   then t
@@ -27,7 +27,7 @@ let bst_rnd_create(size, maxValue : int * int) : 'a t_tree =
   bst_rnd_create_aux(tree_empty(), size, maxValue, !unique)
 ;;
 
-(*Question 2*)
+(*Calcul du déséquilibre*)
 let bst_imbalance(t : 'a t_tree) : int =
   height(tree_subleft(t)) - height(tree_subright(t))
 ;;
@@ -48,8 +48,6 @@ let bst_avg_imbalance(nb, size, maxValue : int * int * int) : float =
 
   (!imb /. float_of_int(nb))
 ;;
-
-(*Question 3*)
 
 (*Génération d'une liste croissante sans doublon*)
 let rec generate_aux(list, size, limit, array : 'a list * int * int * bool array) : ('a list * bool array) =
