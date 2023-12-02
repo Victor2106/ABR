@@ -33,7 +33,7 @@ decroissant : [5 ; 7 ; 9 ; 15] [25 ; 39 ; 87] [2 ; 12]
 Ceci formera : [5 ; 7 ; 9 ; 15 ; 25 ; 39 ; 87 ; 2 ; 12]
 
 (* Sous-suites de longueur fixe *)
-fixe (longueur) : [5 ; 7 ; 9] [25 ; 39 ; 87] [2 ; 12 ; 36]
+fixe : [5 ; 7 ; 9] [25 ; 39 ; 87] [2 ; 12 ; 36]
 Ceci formera : [5 ; 7 ; 9 ; 25 ; 39 ; 87 ; 2 ; 12 ; 36]
 ```
 
